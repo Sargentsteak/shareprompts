@@ -14,7 +14,7 @@ const Nav = () => {
   useEffect(() => {
 
     const setUpProviders = async () => {
-       const response = await getProviders();
+      const response = await getProviders();
 
       setProviders(response)
     }
@@ -42,7 +42,7 @@ const Nav = () => {
             </button>
 
             <Link href='/profile'>
-              <Image src='/assets/images/logo.svg' width={37} height={37} className='rounded-full' alt='profile' onClick={() => settoggleDropdown((prev) => !prev)} />
+              <Image src={session?.user.image} width={37} height={37} className='rounded-full' alt='profile' onClick={() => settoggleDropdown((prev) => !prev)} />
             </Link>
 
 
@@ -67,7 +67,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex">
             <Image
-              src='/assets/images/logo.svg'
+              src={session?.user.image}
               width={37}
               height={37}
               className='rounded-full cursor-pointer'
